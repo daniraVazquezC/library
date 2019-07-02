@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    image: library:development
+    command: ember server --live-reload-port 35730
+    ports:
+      - ${LIBRARY_WEB_PORT:-4200}:4200
+      - ${LIBRARY_WEB_LIVE_RELOAD_PORT:-35730}:35730
+    volumes:
+      # Mount our app code directory (".") into our app containers at the
+      # "/usr/src" folder:
+      - .:/usr/src
+    # entrypoint: /usr/src/bin/entrypoint-dev
+
+    # Keep the stdin open, so we can attach to our app container's process
+    # and do things such as byebug, etc:
+    stdin_open: true
+
+    # Enable sending signals (CTRL+C, CTRL+P + CTRL+Q) into the container:
+    tty: true
+    
