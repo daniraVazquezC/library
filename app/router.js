@@ -11,6 +11,7 @@ Router.map(function() {
 
   this.route('book', function() {
     this.route('show');
+    this.route('update');
   });
 });
 

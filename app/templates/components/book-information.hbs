@@ -1,11 +1,11 @@
 <div class="col-md-6">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Title</h5>
-      <h6>Author</h6>
-      <p class="card-text">Resume</p>
+      <h5 class="card-title">{{book.title}}</h5>
+      <h6>{{book.author}}</h6>
+      <p class="card-text">{{book.resume}}</p>
       {{#link-to "book.show" class="btn btn-primary"}} Show information {{/link-to}}
-      {{#link-to "book.show" class="btn btn-primary"}} Update information {{/link-to}}
+      {{#link-to "book.update" class="btn btn-primary"}} Update information {{/link-to}}
       {{#link-to "book.show" class="btn btn-primary"}} Delete book {{/link-to}}
     </div>
   </div>
