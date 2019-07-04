@@ -1,11 +1,9 @@
 export default function() {
   this.namespace = '/api';
 
-  this.get('/books', function() {
-    return {
-      data: [{
+  let books = [{
         type: 'book',
-        id: '1',
+        id: 'rental1',
         attributes: {
           title: 'Grand Old Mansion',
           author: 'Veruca Salt',
@@ -13,13 +11,24 @@ export default function() {
         }
       },  {
         type: 'book',
-        id: '2',
+        id: 'rental2',
         attributes: {
           title: 'Downtown Charm',
           author: 'Violet Beauregarde',
           resume: 'Fusce in diam tristique, imperdiet odio in, auctor orci. Curabitur sed molestie arcu, a fermentum orci. Morbi vel lacinia nunc.'
         }
       }]
-    };
+
+  this.get('/books', function() {
+    return { data: books };
+  });
+
+  this.get('/books/:id', function (db, request) {
+    return { data: books.find((book) => request.params.id === book.id) };
+  });
+
+  this.post('/books', function( schema, request){
+    const attrs= JSON.parse(request.requestBody).book;
+    return schema.books.create(attrs);
   });
 }
