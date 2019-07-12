@@ -1,8 +1,8 @@
 import DS from 'ember-data';
-const { Model } = DS;
+const { Model, belongsTo } = DS;
 
 export default Model.extend({
   title: DS.attr(),
-  author: DS.attr(),
-  resume: DS.attr()
+  resume: DS.attr(),
+  author: belongsTo('author')
 });
