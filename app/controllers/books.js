@@ -4,13 +4,16 @@ export default Controller.extend({
 
   actions:{
     addBook(){
-      
-      console.log(this)
       let newBook = this.store.createRecord('book', this);
       newBook.save();
     },
-    searchAuthor(params){
-      console.log(this.get('store').query('author',{author: params}))
+    searchAuthor(param){
+      if(param !== ''){
+        return this.get('store').query('author',{author: param})    
+      }else{
+        return this.get('store').findAll('author')
+      }
+      
     }
   }
 });

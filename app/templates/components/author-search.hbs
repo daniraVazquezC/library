@@ -1,7 +1,13 @@
 <div class="form-group col-md-6">
   <label for="author">Author</label>
-  {{input value=author class="form-control" key-up=(action 'getWord')}}
+  {{input value=author class="form-control" key-up=(action 'getWord') click=(action 'getWord')}}
 </div>
+
+<ul>
+{{#each results as |result|}}
+<li>{{result.name}}</li>
+{{/each}}
+</ul>
 
 
 
