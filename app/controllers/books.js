@@ -8,6 +8,9 @@ export default Controller.extend({
       console.log(this)
       let newBook = this.store.createRecord('book', this);
       newBook.save();
+    },
+    searchAuthor(params){
+      console.log(this.get('store').query('author',{author: params}))
     }
   }
 });
