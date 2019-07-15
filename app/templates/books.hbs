@@ -1,9 +1,8 @@
 <div class="col-md-12">
   <h3 class="text-center py-2">Books</h3>
 </div>
-{{#add-book}}
+{{#add-book onSubmit=(action "addBook")}}
 {{author-search search=(action 'searchAuthor')}}
-
 {{/add-book}}
 
 {{#each model as |bookUnit|}}

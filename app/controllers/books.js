@@ -1,10 +1,15 @@
 import Controller from '@ember/controller';
-export default Controller.extend({
-  
-  
+import $ from 'jquery';
+
+export default Controller.extend({ 
+  author : '', 
   actions:{
-    addBook(){
-      let newBook = this.store.createRecord('book', this);
+    addBook(title,resume){
+      const store = this.get('store');
+      const author = store.peekRecord('author', $('#author').val())
+      //this.set('author',$('#author').val());
+
+      let newBook = store.createRecord('book', {title: title , resume: resume, author: author});
       newBook.save();
     },
     searchAuthor(param){

@@ -5,12 +5,14 @@ import $ from 'jquery';
 export default Component.extend({
   tagName: '',
   results: '',
+
   willRender(){
     let authorSearch = this.get('search');
     authorSearch('').then((results)=> this.set('results',results))  
   },
   didRender(){
     $('#author').select2();
+    
   },
   
   actions:{
@@ -19,7 +21,7 @@ export default Component.extend({
       let authorSearch = this.get('search');
       authorSearch(name).then((results)=> this.set('results',results))    
     }*/
-
+    
     
   }
 

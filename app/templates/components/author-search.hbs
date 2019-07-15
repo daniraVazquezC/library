@@ -2,21 +2,11 @@
   <label for="author">Author</label>
   <select class="custom-select" id="author">
     {{#each results as |result|}}
-    <option value={{result.name}}>{{result.name}}</option>
+    <option value={{result.id}}>{{result.name}}</option>
     {{/each}}
   </select>
 </div>
 
-
-<!--
-
-{{input id = "automplete-1" value=author class="form-control" key-up=(action 'getWord') click=(action 'getWord')}}
-<ul>
-{{#each results as |result|}}
-<li>{{result.name}}</li>
-{{/each}}
-</ul>
--->
 
 
 
