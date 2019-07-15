@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-
 export default Controller.extend({
-
+  
+  
   actions:{
     addBook(){
       let newBook = this.store.createRecord('book', this);

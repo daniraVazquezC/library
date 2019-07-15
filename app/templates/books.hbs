@@ -2,8 +2,13 @@
   <h3 class="text-center py-2">Books</h3>
 </div>
 {{#add-book}}
-  {{author-search search=(action 'searchAuthor')}}
+{{author-search search=(action 'searchAuthor')}}
+
 {{/add-book}}
+
 {{#each model as |bookUnit|}}
   {{book-information book=bookUnit}}
 {{/each}}
+
+
+
