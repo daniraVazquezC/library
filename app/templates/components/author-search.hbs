@@ -1,0 +1,12 @@
+<div class="form-group col-md-6">
+  <label for="author">Author</label>
+  <select class="custom-select" id="author">
+    {{#each results as |result|}}
+    <option value={{result.id}}>{{result.name}}</option>
+    {{/each}}
+  </select>
+</div>
+
+
+
+
